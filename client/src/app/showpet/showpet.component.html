@@ -1,0 +1,11 @@
+<div *ngIf="pet" >
+    <h3>Details about {{ pet.name }}</h3>
+
+    <h3>Type: {{pet.type}} </h3>
+    <h3>Description: {{pet.description}} </h3>
+    <h3>Skills: {{pet.skill1}}, {{pet.skill2}}, {{pet.skill3}} </h3>
+    <h3>Likes: {{ pet.likes }}</h3>
+
+    <button (click)="like()" [disabled]="liked" >Like</button>
+    <button (click)="delete()" >Adopt a pet!</button>
+</div>

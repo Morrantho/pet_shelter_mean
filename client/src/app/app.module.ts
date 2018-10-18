@@ -8,10 +8,18 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 
 import { PetService } from "./pet.service";
+import { PetsComponent } from './pets/pets.component';
+import { NewpetComponent } from './newpet/newpet.component';
+import { ShowpetComponent } from './showpet/showpet.component';
+import { EditpetComponent } from './editpet/editpet.component';
 
 @NgModule({
   declarations: [
-      AppComponent
+      AppComponent,
+      PetsComponent,
+      NewpetComponent,
+      ShowpetComponent,
+      EditpetComponent
   ],
   imports: [
       BrowserModule,

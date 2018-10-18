@@ -3,12 +3,19 @@ let Pet = require("mongoose").model("Pet");
 class PetController{
 
     create(req,res){
-        let pet = new Pet(req.body);
+        Pet.findOne({ name: req.body.name }, (e,pet)=>{
+            if(pet){
+                return res.json({ errors:{ name:{ message:"A pet with this name already exists" } } });
+            }else{        
+                let pet = new Pet(req.body);
 
-        pet.save(e=>{
-            if(e) return res.json(e);
-            return res.json(pet);
-        });
+                pet.save(e=>{
+                    if(e) return res.json(e);
+                    return res.json(pet);
+                });
+            }
+        })
+
     }
 
     all(req,res){
@@ -37,7 +44,7 @@ class PetController{
             pet.skill3 = req.body.skill3;
 
             pet.save(e=>{
-                if(e) return res.status(400).json(e);
+                if(e) return res.json(e);
                 return res.status(200).json(pet);
             });
         })

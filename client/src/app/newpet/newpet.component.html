@@ -1,0 +1,16 @@
+<div *ngIf="pet.errors" >
+    <h1>{{ pet.errors.name.message}}</h1>
+    <h1>{{ pet.errors.type.message }}</h1>
+    <h1>{{ pet.errors.description.message }}</h1>
+</div>
+
+<form (submit)="create( $event )" >
+    <p><input type="text" placeholder="Name" name="pet.name" [(ngModel)]="pet.name" /></p>
+    <p><input type="text" placeholder="Description" name="pet.description" [(ngModel)]="pet.description" /></p>
+    <p><input type="text" placeholder="Type" name="pet.type" [(ngModel)]="pet.type" /></p>
+    <p><input type="text" placeholder="Skill 1" name="pet.skill1" [(ngModel)]="pet.skill1" /></p>
+    <p><input type="text" placeholder="Skill 2" name="pet.skill2" [(ngModel)]="pet.skill2" /></p>
+    <p><input type="text" placeholder="Skill 3" name="pet.skill3" [(ngModel)]="pet.skill3" /></p>
+
+    <input type="submit" value="Create Pet!" />
+</form>
