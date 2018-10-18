@@ -1,0 +1,1 @@
+npm install -- Inside your client and server folder
